@@ -13,14 +13,9 @@ def columns():
 
 
 def compare(name):
-    my_list = columns()
     new_name = name.lower().replace(" ", "_")
-    if new_name == my_list[-1]:
-        my_name = (new_name + '\n')
-    else:
-        my_name = new_name
 
     my_list = []
     for index, row in df.iterrows():
-        my_list.append(row[my_name])
+        my_list.append(row[new_name])
     return my_list
